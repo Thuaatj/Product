@@ -4,15 +4,14 @@ import { ApiService } from '../../services/api.service';
 import { Project } from '../../models/project.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
-// import { Router, RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css'],
-  standalone: true, // ✅ Add this line for standalone components
-  imports: [CommonModule, FormsModule], // ✅ Add RouterLink if used in HTML
+  standalone: true,
+  imports: [CommonModule, FormsModule, RouterLink],
 })
 export class ProjectsComponent implements OnInit {
   projects: Project[] = [];
@@ -21,7 +20,6 @@ export class ProjectsComponent implements OnInit {
   isLoading = false;
   searchTerm = '';
 
-  // ✅ Ensure Router is properly injected
   constructor(private apiService: ApiService, private router: Router) {}
 
   ngOnInit(): void {

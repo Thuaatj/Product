@@ -13,5 +13,5 @@ export const routes: Routes = [
   { path: 'tasks', component: TasksComponent },
   { path: 'tasks/add', component: AddTaskComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: '**', component: NotFoundComponent },
+  { path: '**', component: NotFoundComponent }
 ];

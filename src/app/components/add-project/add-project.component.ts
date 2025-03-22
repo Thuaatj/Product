@@ -5,13 +5,15 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { ApiService } from '../../services/api.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'app-add-project',
   templateUrl: './add-project.component.html',
   styleUrls: ['./add-project.component.css'],
   imports: [CommonModule, ReactiveFormsModule], // Thêm CommonModule ở đây
-  standalone: true
+  standalone: true,
+  providers: [TaskService] 
 })
 export class AddProjectComponent {
   projectForm: FormGroup;

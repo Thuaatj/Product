@@ -1,7 +1,6 @@
 // src/app/app.module.ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module'; // ✅ Import đúng chỗ
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddProjectComponent } from './components/add-project/add-project.component';
@@ -23,7 +22,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, // ✅ Chỉ import ở đây
     FormsModule,
     ReactiveFormsModule,
   ],

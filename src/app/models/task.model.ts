@@ -1,9 +1,9 @@
 // export interface Task {
-//     id?: number;          
-//     title: string;        
-//     description?: string; 
-//     completed: boolean;   
-//     createdAt?: Date; 
+//     id?: number;
+//     title: string;
+//     description?: string;
+//     completed: boolean;
+//     createdAt?: Date;
 //     updatedAt?: Date;
 //   }
 // src/app/components/tasks/tasks.module.ts
@@ -20,15 +20,16 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [TasksComponent, AddTaskComponent],
+  declarations: [],
   imports: [
     CommonModule,
     RouterModule.forChild(routes), // ✅ Sử dụng forChild cho module con
     FormsModule,
     ReactiveFormsModule,
+    TasksComponent,
+    AddTaskComponent,
   ],
 })
 export class TasksModule {}
 
 
-  
