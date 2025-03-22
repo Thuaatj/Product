@@ -1,0 +1,30 @@
+<div *ngIf="isLoading">Đang tải nhiệm vụ...</div>
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+<!-- 📌 Form để thêm/sửa nhiệm vụ -->
+<form (ngSubmit)="editMode ? updateTask() : addTask()">
+  <label for="title">Tiêu đề:</label>
+  <input id="title" type="text" formControlName="title" placeholder="Nhập tiêu đề" required>
+  <div *ngIf="taskForm.controls['title'].invalid">
+    Tiêu đề phải có ít nhất 3 ký tự.
+  </div>
+
+  <label for="description">Mô tả:</label>
+  <textarea id="description" formControlName="description" placeholder="Nhập mô tả"></textarea>
+
+  <label>
+    <input type="checkbox" formControlName="completed"> Đã hoàn thành
+  </label>
+
+  <button type="submit">{{ editMode ? 'Cập nhật' : 'Thêm mới' }}</button>
+  <button type="button" *ngIf="editMode" (click)="resetForm()">Hủy</button>
+</form>
+
+<!-- 📌 Danh sách nhiệm vụ -->
+<ul>
+  <li *ngFor="let task of tasks">
+    <span>{{ task.title }}</span> - {{ task.completed ? '✅ Hoàn thành' : '❌ Chưa xong' }}
+    <button (click)="editTask(task)">Sửa</button>
+    <button (click)="deleteTask(task)">Xóa</button>
+  </li>
+</ul>

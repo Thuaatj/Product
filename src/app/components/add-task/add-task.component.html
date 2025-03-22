@@ -1,0 +1,15 @@
+<h2>Create Task</h2>
+
+<form [formGroup]="taskForm" (ngSubmit)="addTask()">
+  <input type="text" formControlName="title" placeholder="Task Title" required />
+
+  <textarea formControlName="description" placeholder="Description"></textarea>
+
+  <label>
+    <input type="checkbox" formControlName="completed" />
+    Completed
+  </label>
+
+  <button type="submit">Create Task</button>
+  <button type="button" (click)="router.navigate(['/tasks'])">Back to Tasks</button>
+</form>

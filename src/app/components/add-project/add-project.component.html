@@ -1,0 +1,16 @@
+<h2>Thêm Dự Án</h2>
+
+<form [formGroup]="projectForm" (ngSubmit)="addProject()">
+  <label for="name">Tên dự án:</label>
+  <input id="name" formControlName="name" type="text" />
+
+  <label for="date_of_start">Ngày bắt đầu:</label>
+  <input id="date_of_start" formControlName="date_of_start" type="date" />
+
+  <label for="team_size">Số lượng thành viên:</label>
+  <input id="team_size" formControlName="team_size" type="number" />
+
+  <button type="submit">Thêm</button>
+
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+</form>

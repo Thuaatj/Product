@@ -1,0 +1,317 @@
+/* Reset CSS (đảm bảo tính nhất quán trên các trình duyệt) */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f9; /* Màu nền tổng thể */
+  }
+  
+  main.main {
+    padding: 20px;
+  }
+  
+  /* Header */
+  .bg-success {
+    background-color: #28a745 !important; /* Màu xanh lá cây đậm */
+  }
+  
+  .input-group {
+    max-width: 300px;
+  }
+  
+  .btn-warning {
+    background-color: #ffc107; /* Màu vàng */
+    border-color: #ffc107;
+  }
+  
+  .btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+  }
+  
+  /* Cột trái */
+  aside.col-lg-3 {
+    padding-right: 15px; /* Thêm khoảng cách giữa các cột */
+  }
+  
+  .card.bg-light {
+    background-color: #ffffff !important; /* Màu trắng cho thẻ */
+    border: 1px solid #dee2e6; /* Đường viền nhẹ */
+  }
+  
+  .card-body.text-center img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  
+  .list-group-item {
+    border: 1px solid #dee2e6;
+    border-radius: 0;
+  }
+  
+  .list-group-item:first-child {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  
+  .list-group-item:last-child {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  
+  .text-secondary {
+    color: #6c757d !important;
+  }
+  
+  /* Cột giữa */
+  section.col-lg-6 {
+    padding: 0 15px;
+  }
+  
+  .btn-outline-dark {
+    border-color: #343a40;
+    margin-right: 900px;
+  }
+
+  .btn-outline-dark-float-right{
+    margin-right: 900px;
+  }
+  
+  .btn-outline-dark:hover {
+    background-color: #343a40;
+    color: #fff;
+  }
+  
+  .card.border-primary {
+    border-color: #007bff !important;
+  }
+  
+  .card-header.bg-primary {
+    background-color: #007bff !important;
+  }
+  
+  .card.border-info {
+    border-color: #17a2b8 !important;
+  }
+  
+  .card-header.bg-info {
+    background-color: #17a2b8 !important;
+  }
+  
+  .table.table-bordered {
+    border: 1px solid #dee2e6;
+  }
+  
+  .table-light thead th {
+    background-color: #f8f9fa;
+  }
+  
+  /* Cột phải */
+  aside.col-lg-3:last-child {
+    padding-left: 15px;
+  }
+  
+  .card.border-secondary {
+    border-color: #6c757d !important;
+  }
+  
+  .card-header.bg-secondary {
+    background-color: #6c757d !important;
+  }
+  
+  .list-group {
+    margin-top: 20px;
+  }
+  
+  .list-group li {
+    border: 1px solid #dee2e6;
+    border-radius: 0;
+    padding: 10px 15px;
+  }
+  
+  .list-group li:first-child {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  
+  .list-group li:last-child {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    background-color: #28a745;
+    color: white;
+    padding: 15px 20px;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: flex-start; /* Thay đổi giá trị này */
+    align-items: center;
+  }
+  
+  .header-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    margin-right: 20px; /* Thêm khoảng cách giữa tiêu đề và menu */
+  }
+  
+  .header-nav {
+    display: flex;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .search-box {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Đẩy phần tìm kiếm sang bên phải */
+  }
+  
+  .search-input {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    width: 200px;
+  }
+  
+  .search-button {
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+  }
+  
+  .search-button:hover {
+    background-color: #e0a800;
+  }
+  
+  .breadcrumb {
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    color: #333;
+  }
+  
+  .breadcrumb-link, .breadcrumb-current {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .breadcrumb-link:hover {
+    text-decoration: underline;
+  }
+  
+  .breadcrumb span {
+    margin: 0 5px;
+  }
+  .team-members-list {
+    border: 1px solid #17a2b8; /* Border info như trong bảng */
+    border-radius: 4px;
+    overflow: hidden; /* Đảm bảo border radius hoạt động */
+  }
+  
+  .card-header {
+    background-color: #17a2b8; /* Background info như trong bảng */
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+  }
+  
+  .region {
+    background-color: #6c757d; /* Màu nền xám như trong hình */
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+  }
+  
+  .member {
+    /* display: flex; */
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-bottom: 1px solid #dee2e6; /* Đường kẻ phân cách */
+  }
+  
+  .member:last-child {
+    border-bottom: none; /* Loại bỏ đường kẻ ở thành viên cuối cùng */
+  }
+  
+  .member-name {
+    font-weight: bold;
+    color: #007bff; /* Màu xanh dương như trong hình */
+  }
+  
+  .member-status {
+    color: #28a745; /* Màu xanh lá cây cho Available */
+  }
+  
+  .member-status.busy {
+    color: #dc3545; /* Màu đỏ cho Busy */
+  }
+
+  .dropdown-container {
+    display: flex;
+    justify-content: space-between; /* Để căn hai nút ra hai đầu */
+    padding: 20px; /* Thêm padding nếu cần */
+    background-color: #f0f0f0; /* Màu nền như trong hình */
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-button {
+    background-color: #6c757d; /* Màu xám như trong hình */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .dropdown-button.right {
+    margin-left: auto; /* Đẩy nút "2021" sang phải */
+  }
+  
+  .dropdown-arrow {
+    margin-left: 10px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }

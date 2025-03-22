@@ -1,0 +1,19 @@
+h2 {
+  color: #2c3e50;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+}
+
+input, button {
+  padding: 8px;
+  font-size: 14px;
+}
+
+.error {
+  color: red;
+}

@@ -1,0 +1,107 @@
+      <div class="header">
+        <div class="header-content">
+          <h2 class="header-title">Quản Lý Dự Án FPoly</h2>
+          <nav class="header-nav">
+            <a [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</a> |
+            <a [routerLink]="['/projects']" routerLinkActive="active">Projects</a> |
+            <a [routerLink]="['/projects/add']" routerLinkActive="active">Add Project</a> |
+            <a [routerLink]="['/tasks/add']" routerLinkActive="active">Add Task</a>
+            <a [routerLink]="['/tasks']" routerLinkActive="active">Task</a>
+          </nav>
+          <div class="search-box">
+            <input type="text" class="search-input" placeholder="Tìm kiếm">
+            <button class="search-button">Tìm</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <a href="/projects" >Trang chủ</a>
+        <span>/</span>
+        <span class="breadcrumb-current">Bảng điều khiển</span>
+      </div>
+
+      <!-- Main Content -->
+      <div class="row gx-4">
+        <!-- Left Sidebar -->
+        <aside class="col-lg-3 col-md-4">
+          <div class="card mb-4 bg-light">
+            <div class="card-body text-center">
+              <img
+                src="https://leapcontent.vn/wp-content/uploads/2021/05/khach-hang-feature.png"
+                class="rounded-circle mb-3"
+                alt="Avatar"
+              />
+              <h5 class="fw-bold text-primary">POLY TECHNIC</h5>
+              <p class="text-muted">Tóm tắt về Team</p>
+            </div>
+          </div>
+      
+          <div class="list-group mb-4">
+            <a href="#" class="list-group-item d-flex justify-content-between align-items-center">
+              SỐ LƯỢNG THÀNH VIÊN <span class="badge bg-primary rounded-pill">{{ totalMembers }}</span>
+            </a>
+            <a href="#" class="list-group-item d-flex justify-content-between align-items-center">
+              TỔNG CHI PHÍ <span class="badge bg-danger">$240k</span>
+            </a>
+            <a href="#" class="list-group-item d-flex justify-content-between align-items-center">
+              CÁC TASK ĐANG XỬ LÝ <span class="badge bg-info rounded-pill">15</span>
+            </a>
+            <a href="#" class="list-group-item d-flex justify-content-between align-items-center">
+              DỰ ÁN SẮP TRIỂN KHAI <span class="badge bg-success">{{ upcomingProjectsPercent }}%</span>
+            </a>
+          </div>
+        </aside>
+      
+        <!-- Center Content -->
+        <section class="col-lg-6 col-md-8">
+          <div *ngIf="isLoading" class="loading">Đang tải dữ liệu...</div>
+          <div *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</div>
+      
+          <!-- Danh Sách Dự Án -->
+          <div class="card mb-4 border-primary" *ngIf="!isLoading && projects.length">
+              <div class="card-header fw-bold bg-primary text-white">DANH SÁCH DỰ ÁN</div>
+            <div class="card-body">
+              <ul>
+                <li *ngFor="let project of projects">
+                  {{ project.name }} - Ngày bắt đầu: {{ project.start_date | date }}
+                  <button (click)="deleteProject(project.id)" class="btn btn-danger btn-sm">Xóa</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      
+        <!-- Right Sidebar -->
+        <aside class="col-lg-3 col-md-4">
+          <div class="team-members-list">
+            <div class="card-header">THÀNH VIÊN CỦA TEAM</div>
+      
+            <!-- Khu vực East -->
+            <div class="region">East</div>
+            <div class="member" *ngFor="let member of eastMembers">
+              <div class="member-name">{{ member.name }}</div>
+              <div class="member-status">{{ member.status }}</div>
+            </div>
+      
+            <!-- Khu vực West -->
+            <div class="region">West</div>
+            <div class="member" *ngFor="let member of westMembers">
+              <div class="member-name">{{ member.name }}</div>
+              <div class="member-status">{{ member.status }}</div>
+            </div>
+      
+            <!-- Khu vực South -->
+            <div class="region">South</div>
+            <div class="member" *ngFor="let member of southMembers">
+              <div class="member-name">{{ member.name }}</div>
+              <div class="member-status">{{ member.status }}</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+  
+
+  

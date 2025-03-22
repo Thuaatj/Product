@@ -1,0 +1,47 @@
+<h2 class="text-primary mb-4">Quản Lý Dự Án</h2>
+
+<div class="actions">
+  <button (click)="openAddProject()" class="btn btn-success mb-3">Thêm Dự Án</button>
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    (input)="searchProjects()"
+    placeholder="Tìm kiếm dự án"
+    class="form-control"
+  />
+</div>
+
+<div *ngIf="isLoading" class="loading">Đang tải dữ liệu...</div>
+<div *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</div>
+
+<!-- Danh sách dự án -->
+<div *ngIf="!isLoading && filteredProjects.length">
+  <table class="table table-bordered table-hover mt-3">
+    <thead class="table-primary">
+      <tr>
+        <th>ID</th>
+        <th>Tên Dự Án</th>
+        <th>Ngày Bắt Đầu</th>
+        <th>Kích Thước Đội Nhóm</th>
+        <th>Hành Động</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let project of filteredProjects">
+        <td>{{ project.id }}</td>
+        <td>{{ project.name }}</td>
+        <td>{{ project.date_of_start | date: 'dd/MM/yyyy' }}</td>
+        <td>{{ project.team_size }}</td>
+        <td>
+          <button (click)="editProject(project)" class="btn btn-warning btn-sm">Sửa</button>
+          <button (click)="deleteProject(project.id)" class="btn btn-danger btn-sm ms-2">Xóa</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Không có dự án -->
+<div *ngIf="!isLoading && !filteredProjects.length" class="alert alert-warning mt-3">
+  Không có dự án nào được tìm thấy!
+</div>
